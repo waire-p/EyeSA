@@ -24,7 +24,21 @@
       </widget>
      </item>
      <item>
-      <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0" columnstretch="2,2">
+      <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0" columnstretch="2,1">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Полная блокировка экрана</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Возможность пропускать перерывы</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
@@ -32,48 +46,36 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="1" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
           <string>Картинка при перерывах</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Полная блокировка экрана</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
+       <item row="4" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
           <string>Время перерыва</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Возможность пропускать перерывы</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
+       <item row="1" column="1">
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>6</number>
+         </property>
          <item>
           <widget class="QRadioButton" name="static_image">
            <property name="text">
             <string>Статичная</string>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">break_mode</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -81,16 +83,12 @@
            <property name="text">
             <string>Видео</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">break_mode</string>
+           </attribute>
           </widget>
          </item>
         </layout>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
        </item>
        <item row="0" column="1">
         <layout class="QFormLayout" name="formLayout">
@@ -130,6 +128,9 @@
            <property name="maximum">
             <number>59</number>
            </property>
+           <property name="value">
+            <number>30</number>
+           </property>
           </widget>
          </item>
          <item row="2" column="1">
@@ -141,7 +142,14 @@
          </item>
         </layout>
        </item>
-       <item row="5" column="1">
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="break_skip">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
         <layout class="QFormLayout" name="formLayout_2">
          <item row="0" column="0">
           <widget class="QLabel" name="label_12">
@@ -169,19 +177,15 @@
            <property name="maximum">
             <number>59</number>
            </property>
+           <property name="value">
+            <number>5</number>
+           </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item row="4" column="1">
-        <widget class="QCheckBox" name="checkBox_2">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QCheckBox" name="checkBox">
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="screen_lock">
          <property name="text">
           <string/>
          </property>
@@ -192,14 +196,14 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="save">
+        <widget class="QPushButton" name="save_button">
          <property name="text">
           <string>Сохранить настройки</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="reset">
+        <widget class="QPushButton" name="reset_button">
          <property name="text">
           <string>Сбросить изменения</string>
          </property>
@@ -213,4 +217,7 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="break_mode"/>
+ </buttongroups>
 </ui>

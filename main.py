@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QWidget
+from PySide6.QtWidgets import QApplication
 from data.main_widget import MainWindow  # pyside6-uic ui/main_window.ui -o ui/ui_main_window.py
 
 if __name__ == "__main__":
