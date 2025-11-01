@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QWidget
 
 from ui.ui_settings import Ui_Settings
 import json
+from data.settings_reader import read_settings
 
 
 class Settings(QWidget):
@@ -42,17 +43,15 @@ class Settings(QWidget):
         self.close()
 
     def change_values(self):
-        with open('data/settings.json') as file:
-            settings = json.load(file)
-            self.ui.break_skip.setChecked(settings['break_skip'])
-            self.ui.screen_lock.setChecked(settings['screen_lock'])
-            if settings['mode'] == 'static_image':
-                self.ui.static_image.setChecked(True)
-            else:
-                self.ui.video.setChecked(True)
-            self.ui.timer_hours.setValue(int(settings['timer'] / (1000 * 60 * 60)) % 24)
-            self.ui.timer_minutes.setValue(int(settings['timer'] / (1000 * 60)) % 60)
-            self.ui.timer_seconds.setValue(int(settings['timer'] / 1000) % 60)
-
-            self.ui.break_minutes.setValue(int(settings['break_time'] / (1000 * 60)) % 60)
-            self.ui.break_seconds.setValue((int(settings['break_time'] / 1000) % 60))
+        settings = read_settings()
+        self.ui.break_skip.setChecked(settings['break_skip'])
+        self.ui.screen_lock.setChecked(settings['screen_lock'])
+        if settings['mode'] == 'static_image':
+            self.ui.static_image.setChecked(True)
+        else:
+            self.ui.video.setChecked(True)
+        self.ui.timer_hours.setValue(int(settings['timer'] / (1000 * 60 * 60)) % 24)
+        self.ui.timer_minutes.setValue(int(settings['timer'] / (1000 * 60)) % 60)
+        self.ui.timer_seconds.setValue(int(settings['timer'] / 1000) % 60)
+        self.ui.break_minutes.setValue(int(settings['break_time'] / (1000 * 60)) % 60)
+        self.ui.break_seconds.setValue((int(settings['break_time'] / 1000) % 60))

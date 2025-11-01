@@ -1,1 +1,1 @@
-{"screen_lock": false, "break_skip": false, "mode": "static_image", "timer": 1800000, "break_time": 300000}
+{"screen_lock": false, "break_skip": false, "mode": "static_image", "timer": 1000, "break_time": 300000}
