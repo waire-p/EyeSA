@@ -37,7 +37,7 @@ class Ui_About(object):
     # setupUi
 
     def retranslateUi(self, About):
-        About.setWindowTitle(QCoreApplication.translate("About", u"Form", None))
+        About.setWindowTitle(QCoreApplication.translate("About", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
         self.label.setText(QCoreApplication.translate("About", u"\u0427\u0442\u043e-\u0442\u043e \u043f\u043e\u0437\u0436\u0435 \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u044c", None))
     # retranslateUi
 

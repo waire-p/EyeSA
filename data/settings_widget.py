@@ -28,7 +28,6 @@ class Settings(QWidget):
             milliseconds = minutes * 60 * 1000 + seconds * 1000
             new_settings['break_time'] = milliseconds
             json.dump(new_settings, file)
-        self.change_values()
         self.close()
 
     def reset_settings(self):
@@ -39,7 +38,6 @@ class Settings(QWidget):
                             'timer': 1800000,
                             'break_time': 300000}
             json.dump(new_settings, file)
-        self.change_values()
         self.close()
 
     def change_values(self):
@@ -50,8 +48,10 @@ class Settings(QWidget):
             self.ui.static_image.setChecked(True)
         else:
             self.ui.video.setChecked(True)
+        # перевод миллисекунд в часы, минуты и секунды
         self.ui.timer_hours.setValue(int(settings['timer'] / (1000 * 60 * 60)) % 24)
         self.ui.timer_minutes.setValue(int(settings['timer'] / (1000 * 60)) % 60)
         self.ui.timer_seconds.setValue(int(settings['timer'] / 1000) % 60)
+        # перевод миллисекунд в минуты и секунды
         self.ui.break_minutes.setValue(int(settings['break_time'] / (1000 * 60)) % 60)
         self.ui.break_seconds.setValue((int(settings['break_time'] / 1000) % 60))
