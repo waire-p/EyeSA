@@ -23,9 +23,13 @@ class Settings(QWidget):
             hours, minutes, seconds = int(self.ui.timer_hours.text()), \
                 int(self.ui.timer_minutes.text()), int(self.ui.timer_seconds.text())
             milliseconds = hours * 3600 * 1000 + minutes * 60 * 1000 + seconds * 1000
+            if milliseconds < 60000:
+                milliseconds = 60000
             new_settings['timer'] = milliseconds
             minutes, seconds = int(self.ui.break_minutes.text()), int(self.ui.break_seconds.text())
             milliseconds = minutes * 60 * 1000 + seconds * 1000
+            if milliseconds <= 60000:
+                milliseconds = 60000
             new_settings['break_time'] = milliseconds
             json.dump(new_settings, file)
         self.close()

@@ -15,16 +15,31 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QPushButton, QSizePolicy,
+    QVBoxLayout, QWidget)
 
 class Ui_BreakWindow(object):
     def setupUi(self, BreakWindow):
         if not BreakWindow.objectName():
             BreakWindow.setObjectName(u"BreakWindow")
-        BreakWindow.resize(492, 449)
+        BreakWindow.resize(549, 530)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(BreakWindow.sizePolicy().hasHeightForWidth())
+        BreakWindow.setSizePolicy(sizePolicy)
+        self.verticalLayout = QVBoxLayout(BreakWindow)
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(BreakWindow)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(230, 170, 121, 151))
+
+        self.verticalLayout.addWidget(self.label)
+
+        self.skip_button = QPushButton(BreakWindow)
+        self.skip_button.setObjectName(u"skip_button")
+
+        self.verticalLayout.addWidget(self.skip_button)
+
 
         self.retranslateUi(BreakWindow)
 
@@ -33,6 +48,7 @@ class Ui_BreakWindow(object):
 
     def retranslateUi(self, BreakWindow):
         BreakWindow.setWindowTitle("")
-        self.label.setText(QCoreApplication.translate("BreakWindow", u"\u041e\u043a\u043e\u0448\u043a\u043e \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u0430", None))
+        self.label.setText("")
+        self.skip_button.setText(QCoreApplication.translate("BreakWindow", u"\u041f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u0442\u044c", None))
     # retranslateUi
 

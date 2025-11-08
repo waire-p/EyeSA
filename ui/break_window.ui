@@ -6,26 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>492</width>
-    <height>449</height>
+    <width>549</width>
+    <height>530</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string/>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>170</y>
-     <width>121</width>
-     <height>151</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Окошко перерыва</string>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="skip_button">
+     <property name="text">
+      <string>Пропустить</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

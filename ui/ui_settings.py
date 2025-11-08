@@ -108,6 +108,7 @@ class Ui_Settings(object):
 
         self.timer_minutes = QSpinBox(Settings)
         self.timer_minutes.setObjectName(u"timer_minutes")
+        self.timer_minutes.setMinimum(0)
         self.timer_minutes.setMaximum(59)
         self.timer_minutes.setValue(30)
 
@@ -147,6 +148,7 @@ class Ui_Settings(object):
 
         self.break_minutes = QSpinBox(Settings)
         self.break_minutes.setObjectName(u"break_minutes")
+        self.break_minutes.setMinimum(0)
         self.break_minutes.setMaximum(59)
         self.break_minutes.setValue(5)
 
