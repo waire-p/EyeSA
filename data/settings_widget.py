@@ -17,7 +17,7 @@ class Settings(QWidget):
 
     def save_settings(self):
         with open('data/settings.json', mode='w') as file:
-            new_settings = {'screen_lock': self.ui.screen_lock.isChecked(),
+            new_settings = {'keyboard_lock': self.ui.keyboard_lock.isChecked(),
                             'break_skip': self.ui.break_skip.isChecked(),
                             'mode': self.ui.break_mode.checkedButton().objectName()}
             hours, minutes, seconds = int(self.ui.timer_hours.text()), \
@@ -36,7 +36,7 @@ class Settings(QWidget):
 
     def reset_settings(self):
         with open('data/settings.json', mode='w') as file:
-            new_settings = {'screen_lock': False,
+            new_settings = {'keyboard_lock': False,
                             'break_skip': False,
                             'mode': 'static_image',
                             'timer': 1800000,
@@ -47,7 +47,7 @@ class Settings(QWidget):
     def change_values(self):
         settings = read_settings()
         self.ui.break_skip.setChecked(settings['break_skip'])
-        self.ui.screen_lock.setChecked(settings['screen_lock'])
+        self.ui.keyboard_lock.setChecked(settings['keyboard_lock'])
         if settings['mode'] == 'static_image':
             self.ui.static_image.setChecked(True)
         else:

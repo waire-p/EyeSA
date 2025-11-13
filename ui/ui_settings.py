@@ -24,7 +24,27 @@ class Ui_Settings(object):
     def setupUi(self, Settings):
         if not Settings.objectName():
             Settings.setObjectName(u"Settings")
-        Settings.resize(462, 497)
+        Settings.resize(514, 466)
+        Settings.setStyleSheet(u"QWidget{\n"
+"font: 16pt \"Bahnschrift\";\n"
+"background-color: rgb(239, 255, 239);\n"
+"color: rgb(40, 70, 40);\n"
+"}\n"
+"QPushButton{\n"
+"border-radius: 10px;\n"
+"transition: .2s linear;\n"
+"background-color: rgb(209, 250, 209);\n"
+"padding:5px;\n"
+"padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"min-width: 140px;\n"
+"}\n"
+"QSpinBox{\n"
+"background-color: rgb(219, 255, 219);\n"
+"}\n"
+"QCheckBox{\n"
+"\n"
+"}")
         self.verticalLayout_3 = QVBoxLayout(Settings)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout = QVBoxLayout()
@@ -157,10 +177,10 @@ class Ui_Settings(object):
 
         self.gridLayout.addLayout(self.formLayout_2, 4, 1, 1, 1)
 
-        self.screen_lock = QCheckBox(Settings)
-        self.screen_lock.setObjectName(u"screen_lock")
+        self.keyboard_lock = QCheckBox(Settings)
+        self.keyboard_lock.setObjectName(u"keyboard_lock")
 
-        self.gridLayout.addWidget(self.screen_lock, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.keyboard_lock, 2, 1, 1, 1)
 
         self.gridLayout.setColumnStretch(0, 2)
         self.gridLayout.setColumnStretch(1, 1)
@@ -171,11 +191,13 @@ class Ui_Settings(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.save_button = QPushButton(Settings)
         self.save_button.setObjectName(u"save_button")
+        self.save_button.setStyleSheet(u"")
 
         self.horizontalLayout.addWidget(self.save_button)
 
         self.reset_button = QPushButton(Settings)
         self.reset_button.setObjectName(u"reset_button")
+        self.reset_button.setStyleSheet(u"")
 
         self.horizontalLayout.addWidget(self.reset_button)
 
@@ -196,7 +218,7 @@ class Ui_Settings(object):
     def retranslateUi(self, Settings):
         Settings.setWindowTitle(QCoreApplication.translate("Settings", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))
         self.label.setText(QCoreApplication.translate("Settings", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))
-        self.label_4.setText(QCoreApplication.translate("Settings", u"\u041f\u043e\u043b\u043d\u0430\u044f \u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u044d\u043a\u0440\u0430\u043d\u0430", None))
+        self.label_4.setText(QCoreApplication.translate("Settings", u"\u0411\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u043a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u044b", None))
         self.label_5.setText(QCoreApplication.translate("Settings", u"\u0412\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u0430\u0442\u044c \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u044b", None))
         self.label_8.setText(QCoreApplication.translate("Settings", u"\u0412\u0440\u0435\u043c\u044f \u0442\u0430\u0439\u043c\u0435\u0440\u0430", None))
         self.label_3.setText(QCoreApplication.translate("Settings", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430 \u043f\u0440\u0438 \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u0430\u0445", None))
@@ -209,7 +231,7 @@ class Ui_Settings(object):
         self.break_skip.setText("")
         self.label_12.setText(QCoreApplication.translate("Settings", u"\u0421\u0435\u043a\u0443\u043d\u0434\u044b", None))
         self.label_13.setText(QCoreApplication.translate("Settings", u"\u041c\u0438\u043d\u0443\u0442\u044b", None))
-        self.screen_lock.setText("")
+        self.keyboard_lock.setText("")
         self.save_button.setText(QCoreApplication.translate("Settings", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))
         self.reset_button.setText(QCoreApplication.translate("Settings", u"\u0421\u0431\u0440\u043e\u0441\u0438\u0442\u044c \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f", None))
     # retranslateUi

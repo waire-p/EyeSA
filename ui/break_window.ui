@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>549</width>
-    <height>530</height>
+    <width>301</width>
+    <height>278</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,18 +19,32 @@
   <property name="windowTitle">
    <string/>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 16pt &quot;Bahnschrift&quot;;
+background-color: rgb(239, 255, 239);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QPushButton" name="skip_button">
+     <property name="styleSheet">
+      <string notr="true">border-radius: 10px;
+color: rgb(40, 70, 40);
+transition: .2s linear;
+background-color: rgb(209, 250, 209);
+padding:5px;
+padding-left: 10px;
+padding-right: 10px;
+</string>
+     </property>
      <property name="text">
-      <string/>
+      <string>Пропустить</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="skip_button">
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Пропустить</string>
+      <string/>
      </property>
     </widget>
    </item>

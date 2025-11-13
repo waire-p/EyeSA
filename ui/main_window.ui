@@ -6,12 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>427</width>
-    <height>371</height>
+    <width>516</width>
+    <height>270</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Главное окно</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+font: 16pt &quot;Bahnschrift&quot;;
+background-color: rgb(239, 255, 239);
+color: rgb(40, 70, 40);
+}
+QPushButton{
+border-radius: 10px;
+transition: .2s linear;
+background-color: rgb(209, 250, 209);
+padding:5px;
+padding-left: 10px;
+padding-right: 10px;
+min-width: 140px;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -20,7 +36,7 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="styleSheet">
-         <string notr="true">font: 25pt &quot;MS Shell Dlg 2&quot;;
+         <string notr="true">font: 25pt &quot;Bahnschrift&quot;;
 </string>
         </property>
         <property name="text">
@@ -44,6 +60,9 @@
         </property>
         <item>
          <widget class="QPushButton" name="about_button">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="text">
            <string>О приложении</string>
           </property>
@@ -51,6 +70,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="start_button">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="text">
            <string>Старт</string>
           </property>
@@ -58,6 +80,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="settings_button">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="text">
            <string>Настройки</string>
           </property>

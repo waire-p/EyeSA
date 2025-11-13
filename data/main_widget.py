@@ -56,9 +56,11 @@ class MainWindow(QMainWindow):
         self.break_window.is_skippable()
         self.dialog.close()
         self.break_window.showFullScreen()
+        self.break_window.block_mouse()
 
     def break_timer_timeout(self):
         self.break_timer.stop()
+        self.break_window.unblock_mouse()
         self.notification_timer.start(read_settings()['timer'] * 3 // 4)
         self.break_window.hide()
         self.timer.start(read_settings()['timer'])

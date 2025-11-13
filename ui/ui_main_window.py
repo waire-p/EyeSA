@@ -23,7 +23,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(427, 371)
+        MainWindow.resize(516, 270)
+        MainWindow.setStyleSheet(u"font: 16pt \"Bahnschrift\";\n"
+"background-color: rgb(239, 255, 239);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
@@ -32,8 +34,8 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setStyleSheet(u"font: 25pt \"MS Shell Dlg 2\";\n"
-"")
+        self.label.setStyleSheet(u"font: 25pt \"Bahnschrift\";\n"
+"color: rgb(40, 70, 40);")
         self.label.setTextFormat(Qt.PlainText)
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setWordWrap(False)
@@ -45,16 +47,43 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.about_button = QPushButton(self.centralwidget)
         self.about_button.setObjectName(u"about_button")
+        self.about_button.setStyleSheet(u"border-radius: 10px;\n"
+"color: rgb(40, 70, 40);\n"
+"transition: .2s linear;\n"
+"background-color: rgb(209, 250, 209);\n"
+"padding:5px;\n"
+"padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"min-width: 140px;\n"
+"")
 
         self.horizontalLayout.addWidget(self.about_button)
 
         self.start_button = QPushButton(self.centralwidget)
         self.start_button.setObjectName(u"start_button")
+        self.start_button.setStyleSheet(u"border-radius: 10px;\n"
+"color: rgb(40, 70, 40);\n"
+"transition: .2s linear;\n"
+"background-color: rgb(209, 250, 209);\n"
+"padding:5px;\n"
+"padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"min-width: 140px;\n"
+"")
 
         self.horizontalLayout.addWidget(self.start_button)
 
         self.settings_button = QPushButton(self.centralwidget)
         self.settings_button.setObjectName(u"settings_button")
+        self.settings_button.setStyleSheet(u"border-radius: 10px;\n"
+"color: rgb(40, 70, 40);\n"
+"transition: .2s linear;\n"
+"background-color: rgb(209, 250, 209);\n"
+"padding:5px;\n"
+"padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"min-width: 140px;\n"
+"")
 
         self.horizontalLayout.addWidget(self.settings_button)
 
