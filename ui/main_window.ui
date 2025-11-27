@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>516</width>
-    <height>270</height>
+    <height>264</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@ min-width: 140px;
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,3">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,2">
       <item>
        <widget class="QLabel" name="label">
         <property name="styleSheet">
@@ -40,7 +40,7 @@ min-width: 140px;
 </string>
         </property>
         <property name="text">
-         <string>Название</string>
+         <string>EyeSa</string>
         </property>
         <property name="textFormat">
          <enum>Qt::PlainText</enum>

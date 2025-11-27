@@ -29,10 +29,15 @@ padding-right: 10px;
 min-width: 140px;
 }
 QSpinBox{
-background-color: rgb(219, 255, 219);
-}
+background-color: rgb(219, 255, 219);}
 QCheckBox{
-
+background-color: None;
+accent-color:rgb(112, 148, 112);
+font: 10pt &quot;Bahnschrift&quot;;
+}
+QRadioButton{
+background-color: None;
+accent-color:rgb(112, 148, 112);
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -89,6 +94,9 @@ QCheckBox{
          </property>
          <item>
           <widget class="QRadioButton" name="static_image">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="text">
             <string>Статичная</string>
            </property>
@@ -214,6 +222,9 @@ QCheckBox{
        </item>
        <item row="2" column="1">
         <widget class="QCheckBox" name="keyboard_lock">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -236,8 +247,7 @@ QCheckBox{
        <item>
         <widget class="QPushButton" name="reset_button">
          <property name="styleSheet">
-          <string notr="true">
-</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>Сбросить изменения</string>

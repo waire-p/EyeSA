@@ -23,9 +23,21 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(516, 270)
-        MainWindow.setStyleSheet(u"font: 16pt \"Bahnschrift\";\n"
-"background-color: rgb(239, 255, 239);")
+        MainWindow.resize(516, 264)
+        MainWindow.setStyleSheet(u"QWidget{\n"
+"font: 16pt \"Bahnschrift\";\n"
+"background-color: rgb(239, 255, 239);\n"
+"color: rgb(40, 70, 40);\n"
+"}\n"
+"QPushButton{\n"
+"border-radius: 10px;\n"
+"transition: .2s linear;\n"
+"background-color: rgb(209, 250, 209);\n"
+"padding:5px;\n"
+"padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"min-width: 140px;\n"
+"}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
@@ -35,7 +47,7 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         self.label.setStyleSheet(u"font: 25pt \"Bahnschrift\";\n"
-"color: rgb(40, 70, 40);")
+"")
         self.label.setTextFormat(Qt.PlainText)
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setWordWrap(False)
@@ -47,43 +59,19 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.about_button = QPushButton(self.centralwidget)
         self.about_button.setObjectName(u"about_button")
-        self.about_button.setStyleSheet(u"border-radius: 10px;\n"
-"color: rgb(40, 70, 40);\n"
-"transition: .2s linear;\n"
-"background-color: rgb(209, 250, 209);\n"
-"padding:5px;\n"
-"padding-left: 10px;\n"
-"padding-right: 10px;\n"
-"min-width: 140px;\n"
-"")
+        self.about_button.setStyleSheet(u"")
 
         self.horizontalLayout.addWidget(self.about_button)
 
         self.start_button = QPushButton(self.centralwidget)
         self.start_button.setObjectName(u"start_button")
-        self.start_button.setStyleSheet(u"border-radius: 10px;\n"
-"color: rgb(40, 70, 40);\n"
-"transition: .2s linear;\n"
-"background-color: rgb(209, 250, 209);\n"
-"padding:5px;\n"
-"padding-left: 10px;\n"
-"padding-right: 10px;\n"
-"min-width: 140px;\n"
-"")
+        self.start_button.setStyleSheet(u"")
 
         self.horizontalLayout.addWidget(self.start_button)
 
         self.settings_button = QPushButton(self.centralwidget)
         self.settings_button.setObjectName(u"settings_button")
-        self.settings_button.setStyleSheet(u"border-radius: 10px;\n"
-"color: rgb(40, 70, 40);\n"
-"transition: .2s linear;\n"
-"background-color: rgb(209, 250, 209);\n"
-"padding:5px;\n"
-"padding-left: 10px;\n"
-"padding-right: 10px;\n"
-"min-width: 140px;\n"
-"")
+        self.settings_button.setStyleSheet(u"")
 
         self.horizontalLayout.addWidget(self.settings_button)
 
@@ -91,7 +79,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.verticalLayout.setStretch(0, 1)
-        self.verticalLayout.setStretch(1, 3)
+        self.verticalLayout.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
@@ -104,7 +92,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0413\u043b\u0430\u0432\u043d\u043e\u0435 \u043e\u043a\u043d\u043e", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"EyeSa", None))
         self.about_button.setText(QCoreApplication.translate("MainWindow", u"\u041e \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438", None))
         self.start_button.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0440\u0442", None))
         self.settings_button.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))

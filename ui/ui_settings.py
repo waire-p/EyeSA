@@ -40,10 +40,15 @@ class Ui_Settings(object):
 "min-width: 140px;\n"
 "}\n"
 "QSpinBox{\n"
-"background-color: rgb(219, 255, 219);\n"
-"}\n"
+"background-color: rgb(219, 255, 219);}\n"
 "QCheckBox{\n"
-"\n"
+"background-color: None;\n"
+"accent-color:rgb(112, 148, 112);\n"
+"font: 10pt \"Bahnschrift\";\n"
+"}\n"
+"QRadioButton{\n"
+"background-color: None;\n"
+"accent-color:rgb(112, 148, 112);\n"
 "}")
         self.verticalLayout_3 = QVBoxLayout(Settings)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -89,6 +94,7 @@ class Ui_Settings(object):
         self.break_mode.setObjectName(u"break_mode")
         self.break_mode.addButton(self.static_image)
         self.static_image.setObjectName(u"static_image")
+        self.static_image.setStyleSheet(u"")
         self.static_image.setChecked(True)
 
         self.verticalLayout_2.addWidget(self.static_image)
@@ -179,6 +185,7 @@ class Ui_Settings(object):
 
         self.keyboard_lock = QCheckBox(Settings)
         self.keyboard_lock.setObjectName(u"keyboard_lock")
+        self.keyboard_lock.setStyleSheet(u"")
 
         self.gridLayout.addWidget(self.keyboard_lock, 2, 1, 1, 1)
 
