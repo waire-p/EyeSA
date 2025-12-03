@@ -5,8 +5,7 @@ from ui.ui_main_window import Ui_MainWindow
 from data.settings_widget import Settings  # pyside6-uic ui/settings.ui -o ui/ui_settings.py
 from data.about_widget import About  # pyside6-uic ui/about.ui -o ui/ui_about.py
 from data.break_widget import BreakWindow  # pyside6-uic ui/break_window.ui -o ui/ui_break_window.py
-from data.notification_dialog import \
-    BreakNotification  # pyside6-uic ui/break_notification.ui -o ui/ui_notification_dialog.py
+from data.notification_dialog import BreakNotification  # pyside6-uic ui/break_notification.ui -o ui/ui_notification_dialog.py
 from data.settings_reader import read_settings
 
 
@@ -67,4 +66,8 @@ class MainWindow(QMainWindow):
 
     def show_notification(self):
         self.dialog.update_text()
-        button = self.dialog.exec()
+        self.dialog.exec()
+        if self.dialog.skip_break():
+            self.timer.stop()
+            self.break_timer.stop()
+            self.timer.start(read_settings()['timer'])

@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget, QApplication
 from PySide6.QtCore import Qt, QTimer
-from ui.ui_break_window import Ui_BreakWindow
+from data.ui.ui_break_window import Ui_BreakWindow
 from data.settings_reader import read_settings
 import pyautogui
 import keyboard

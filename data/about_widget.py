@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget
 
-from ui.ui_about import Ui_About
+from data.ui.ui_about import Ui_About
 
 
 class About(QWidget):
