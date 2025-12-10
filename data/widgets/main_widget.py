@@ -34,7 +34,6 @@ class MainWindow(QMainWindow):
             self.ui.start_button.setText('Стоп')
             self.timer.start(read_settings()['timer'])
             self.notification_timer.start(read_settings()['timer'] * 3 // 4)
-            print('--------------------------------------')
         else:
             self.ui.start_button.setText('Старт')
             self.timer.stop()
@@ -58,7 +57,6 @@ class MainWindow(QMainWindow):
         self.dialog.close()
         self.break_window.showFullScreen()
         self.break_window.block()
-        print('Перерыв!')
 
     def break_timer_timeout(self):
         self.break_timer.stop()
@@ -66,7 +64,6 @@ class MainWindow(QMainWindow):
         self.notification_timer.start(read_settings()['timer'] * 3 // 4)
         self.break_window.hide()
         self.timer.start(read_settings()['timer'])
-        print('За работу!')
 
     def show_notification(self):
         self.dialog.update_text()

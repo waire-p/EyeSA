@@ -17,7 +17,7 @@ class Settings(QWidget):
         self.change_values()
 
     def save_settings(self):
-        with open('data/settings.json', mode='w') as file:
+        with open('data/settings/settings.json', mode='w') as file:
             new_settings = {'keyboard_lock': self.ui.keyboard_lock.isChecked(),
                             'break_skip': self.ui.break_skip.isChecked(),
                             'mode': self.ui.break_mode.checkedButton().objectName()}
@@ -36,7 +36,7 @@ class Settings(QWidget):
         self.close()
 
     def reset_settings(self):
-        with open('data/settings.json', mode='w') as file:
+        with open('data/settings/settings.json', mode='w') as file:
             new_settings = {'keyboard_lock': False,
                             'break_skip': False,
                             'mode': 'text',

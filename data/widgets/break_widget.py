@@ -48,7 +48,6 @@ class BreakWindow(QWidget):
         self.mouse_mover.stop()
 
     def set_text_mode(self):
-        self.ui.label.setStyleSheet()
-        with open('data/messages.json') as file:
+        with open('data/settings/messages.json', encoding='utf-8') as file:
             settings = json.load(file)
             self.ui.label.setText(choice(settings['message']))
