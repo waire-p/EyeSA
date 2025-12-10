@@ -5,7 +5,7 @@ from data.ui.ui_main_window import Ui_MainWindow
 from data.widgets.settings_widget import Settings  # pyside6-uic ui/settings.ui -o ui/ui_settings.py
 from data.widgets.about_widget import About  # pyside6-uic ui/about.ui -o ui/ui_about.py
 from data.widgets.break_widget import BreakWindow  # pyside6-uic ui/break_window.ui -o ui/ui_break_window.py
-from data.notification_dialog import BreakNotification  # pyside6-uic ui/break_notification.ui -o ui/ui_notification_dialog.py
+from data.widgets.notification_dialog import BreakNotification  # pyside6-uic ui/break_notification.ui -o ui/ui_notification_dialog.py
 from data.modules.settings_reader import read_settings
 
 

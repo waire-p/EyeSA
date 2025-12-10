@@ -1,8 +1,9 @@
+import json
+
 from PySide6.QtWidgets import QWidget
 
-from data.ui.ui_settings import Ui_Settings
-import json
 from data.modules.settings_reader import read_settings
+from data.ui.ui_settings import Ui_Settings
 
 
 class Settings(QWidget):

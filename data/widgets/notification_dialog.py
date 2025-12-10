@@ -1,11 +1,9 @@
-from fileinput import close
-
 from PySide6.QtWidgets import QDialog
-from pyautogui import click
 
 from data.modules.settings_reader import read_settings
 from data.ui.ui_notification_dialog import Ui_BreakNotification
 import pymorphy3
+
 
 class BreakNotification(QDialog):
     def __init__(self):

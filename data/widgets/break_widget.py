@@ -20,7 +20,6 @@ class BreakWindow(QWidget):
         for screen in QApplication.screens():
             self.width, self.height = screen.size().width(), screen.size().height()
 
-
     def is_skippable(self):
         if not read_settings()['break_skip']:
             self.ui.skip_button.hide()
