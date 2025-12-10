@@ -1,6 +1,9 @@
-from PySide6.QtWidgets import QDialog
+from fileinput import close
 
-from data.settings_reader import read_settings
+from PySide6.QtWidgets import QDialog
+from pyautogui import click
+
+from data.modules.settings_reader import read_settings
 from data.ui.ui_notification_dialog import Ui_BreakNotification
 import pymorphy3
 
@@ -9,7 +12,8 @@ class BreakNotification(QDialog):
         super().__init__()
         self.ui = Ui_BreakNotification()
         self.ui.setupUi(self)
-        self.ui.skip_btn.clicked.connect(self.skip_break)
+        self.ui.skip_btn.clicked.connect(self.skip)
+        self.ui.skip_btn.setChecked(False)
 
     def update_text(self):
         time_remaining = read_settings()['timer'] * 1 // 4
@@ -31,5 +35,11 @@ class BreakNotification(QDialog):
             seconds = str(seconds) + ' ' + morph.parse('секунда')[0].make_agree_with_number(seconds).word
             message += seconds
         self.ui.message.setText(message)
-    def skip_break(self):
+        if read_settings()['break_skip']:
+            self.ui.skip_btn.show()
+        else:
+            self.ui.skip_btn.hide()
+
+    def skip(self):
+        self.close()
         return True

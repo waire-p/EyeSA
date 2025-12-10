@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import QWidget
 
-from ui.ui_settings import Ui_Settings
+from data.ui.ui_settings import Ui_Settings
 import json
-from data.settings_reader import read_settings
+from data.modules.settings_reader import read_settings
 
 
 class Settings(QWidget):
@@ -38,7 +38,7 @@ class Settings(QWidget):
         with open('data/settings.json', mode='w') as file:
             new_settings = {'keyboard_lock': False,
                             'break_skip': False,
-                            'mode': 'static_image',
+                            'mode': 'text',
                             'timer': 1800000,
                             'break_time': 300000}
             json.dump(new_settings, file)
@@ -48,10 +48,8 @@ class Settings(QWidget):
         settings = read_settings()
         self.ui.break_skip.setChecked(settings['break_skip'])
         self.ui.keyboard_lock.setChecked(settings['keyboard_lock'])
-        if settings['mode'] == 'static_image':
-            self.ui.static_image.setChecked(True)
-        else:
-            self.ui.video.setChecked(True)
+        if settings['mode'] == 'text':
+            self.ui.text.setChecked(True)
         # перевод миллисекунд в часы, минуты и секунды
         self.ui.timer_hours.setValue(int(settings['timer'] / (1000 * 60 * 60)) % 24)
         self.ui.timer_minutes.setValue(int(settings['timer'] / (1000 * 60)) % 60)

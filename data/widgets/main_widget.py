@@ -1,12 +1,12 @@
 from PySide6.QtWidgets import QMainWindow
 from PySide6.QtCore import QTimer
 
-from ui.ui_main_window import Ui_MainWindow
-from data.settings_widget import Settings  # pyside6-uic ui/settings.ui -o ui/ui_settings.py
-from data.about_widget import About  # pyside6-uic ui/about.ui -o ui/ui_about.py
-from data.break_widget import BreakWindow  # pyside6-uic ui/break_window.ui -o ui/ui_break_window.py
+from data.ui.ui_main_window import Ui_MainWindow
+from data.widgets.settings_widget import Settings  # pyside6-uic ui/settings.ui -o ui/ui_settings.py
+from data.widgets.about_widget import About  # pyside6-uic ui/about.ui -o ui/ui_about.py
+from data.widgets.break_widget import BreakWindow  # pyside6-uic ui/break_window.ui -o ui/ui_break_window.py
 from data.notification_dialog import BreakNotification  # pyside6-uic ui/break_notification.ui -o ui/ui_notification_dialog.py
-from data.settings_reader import read_settings
+from data.modules.settings_reader import read_settings
 
 
 class MainWindow(QMainWindow):
@@ -17,8 +17,8 @@ class MainWindow(QMainWindow):
         self.ui.start_button.clicked.connect(self.start)
         self.ui.settings_button.clicked.connect(self.open_settings)
         self.ui.about_button.clicked.connect(self.open_about)
-        self.timer = QTimer()  # Таймер между перерывами
-        self.break_timer = QTimer()  # Таймер перерывов
+        self.timer = QTimer(singleShot=True)  # Таймер между перерывами
+        self.break_timer = QTimer(singleShot=True)  # Таймер перерывов
         self.notification_timer = QTimer(singleShot=True)
         self.timer.timeout.connect(self.timer_timeout)
         self.break_timer.timeout.connect(self.break_timer_timeout)
@@ -34,6 +34,7 @@ class MainWindow(QMainWindow):
             self.ui.start_button.setText('Стоп')
             self.timer.start(read_settings()['timer'])
             self.notification_timer.start(read_settings()['timer'] * 3 // 4)
+            print('--------------------------------------')
         else:
             self.ui.start_button.setText('Старт')
             self.timer.stop()
@@ -50,24 +51,32 @@ class MainWindow(QMainWindow):
         self.about.show()
 
     def timer_timeout(self):
-        self.timer.stop()
         self.break_timer.start(read_settings()['break_time'])
         self.break_window.is_skippable()
+        if read_settings()['mode'] == 'text':
+            self.break_window.set_text_mode()
         self.dialog.close()
         self.break_window.showFullScreen()
-        self.break_window.block_mouse()
+        self.break_window.block()
+        print('Перерыв!')
 
     def break_timer_timeout(self):
         self.break_timer.stop()
-        self.break_window.unblock_mouse()
+        self.break_window.unblock()
         self.notification_timer.start(read_settings()['timer'] * 3 // 4)
         self.break_window.hide()
         self.timer.start(read_settings()['timer'])
+        print('За работу!')
 
     def show_notification(self):
         self.dialog.update_text()
-        self.dialog.exec()
-        if self.dialog.skip_break():
+        f = self.dialog.skip()
+        """if f:
+            print('Skip!')
             self.timer.stop()
             self.break_timer.stop()
-            self.timer.start(read_settings()['timer'])
+            self.notification_timer.start(read_settings()['timer'] * 3 // 4)
+            self.timer.start(read_settings()['timer'])"""
+        self.dialog.exec()
+        f = False
+        print('Напомнили!')

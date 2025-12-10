@@ -1,9 +1,12 @@
+from random import choice
+
 from PySide6.QtWidgets import QWidget, QApplication
 from PySide6.QtCore import Qt, QTimer
 from data.ui.ui_break_window import Ui_BreakWindow
-from data.settings_reader import read_settings
+from data.modules.settings_reader import read_settings
 import pyautogui
 import keyboard
+import json
 
 
 class BreakWindow(QWidget):
@@ -33,14 +36,20 @@ class BreakWindow(QWidget):
     def move_mouse(self):
         pyautogui.moveTo(self.width // 2, 35)
 
-    def block_mouse(self):
-        if read_settings()['break_skip']:
+    def block(self):
+        if read_settings()['keyboard_lock']:
             for i in range(150):
                 keyboard.block_key(i)
         self.mouse_mover.start(100)
 
-    def unblock_mouse(self):
-        if read_settings()['break_skip']:
+    def unblock(self):
+        if read_settings()['keyboard_lock']:
             for i in range(150):
                 keyboard.unblock_key(i)
         self.mouse_mover.stop()
+
+    def set_text_mode(self):
+        self.ui.label.setStyleSheet()
+        with open('data/messages.json') as file:
+            settings = json.load(file)
+            self.ui.label.setText(choice(settings['message']))

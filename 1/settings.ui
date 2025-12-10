@@ -93,25 +93,15 @@ accent-color:rgb(112, 148, 112);
           <number>6</number>
          </property>
          <item>
-          <widget class="QRadioButton" name="static_image">
+          <widget class="QRadioButton" name="text">
            <property name="styleSheet">
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>Статичная</string>
+            <string>Текст</string>
            </property>
            <property name="checked">
             <bool>true</bool>
-           </property>
-           <attribute name="buttonGroup">
-            <string notr="true">break_mode</string>
-           </attribute>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="video">
-           <property name="text">
-            <string>Видео</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">break_mode</string>

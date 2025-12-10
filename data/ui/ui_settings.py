@@ -89,21 +89,15 @@ class Ui_Settings(object):
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setSpacing(6)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.static_image = QRadioButton(Settings)
+        self.text = QRadioButton(Settings)
         self.break_mode = QButtonGroup(Settings)
         self.break_mode.setObjectName(u"break_mode")
-        self.break_mode.addButton(self.static_image)
-        self.static_image.setObjectName(u"static_image")
-        self.static_image.setStyleSheet(u"")
-        self.static_image.setChecked(True)
+        self.break_mode.addButton(self.text)
+        self.text.setObjectName(u"text_2")
+        self.text.setStyleSheet(u"")
+        self.text.setChecked(True)
 
-        self.verticalLayout_2.addWidget(self.static_image)
-
-        self.video = QRadioButton(Settings)
-        self.break_mode.addButton(self.video)
-        self.video.setObjectName(u"video")
-
-        self.verticalLayout_2.addWidget(self.video)
+        self.verticalLayout_2.addWidget(self.text)
 
 
         self.gridLayout.addLayout(self.verticalLayout_2, 1, 1, 1, 1)
@@ -230,8 +224,7 @@ class Ui_Settings(object):
         self.label_8.setText(QCoreApplication.translate("Settings", u"\u0412\u0440\u0435\u043c\u044f \u0442\u0430\u0439\u043c\u0435\u0440\u0430", None))
         self.label_3.setText(QCoreApplication.translate("Settings", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430 \u043f\u0440\u0438 \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u0430\u0445", None))
         self.label_7.setText(QCoreApplication.translate("Settings", u"\u0412\u0440\u0435\u043c\u044f \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u0430", None))
-        self.static_image.setText(QCoreApplication.translate("Settings", u"\u0421\u0442\u0430\u0442\u0438\u0447\u043d\u0430\u044f", None))
-        self.video.setText(QCoreApplication.translate("Settings", u"\u0412\u0438\u0434\u0435\u043e", None))
+        self.text.setText(QCoreApplication.translate("Settings", u"\u0422\u0435\u043a\u0441\u0442", None))
         self.label_9.setText(QCoreApplication.translate("Settings", u"\u0421\u0435\u043a\u0443\u043d\u0434\u044b", None))
         self.label_10.setText(QCoreApplication.translate("Settings", u"\u041c\u0438\u043d\u0443\u0442\u044b", None))
         self.label_11.setText(QCoreApplication.translate("Settings", u"\u0427\u0430\u0441\u044b", None))
