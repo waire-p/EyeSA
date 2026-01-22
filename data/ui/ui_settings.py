@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'settings.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.10.0
+## Created by: Qt User Interface Compiler version 6.10.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,7 +24,8 @@ class Ui_Settings(object):
     def setupUi(self, Settings):
         if not Settings.objectName():
             Settings.setObjectName(u"Settings")
-        Settings.resize(514, 466)
+        Settings.resize(440, 380)
+        Settings.setMinimumSize(QSize(440, 380))
         Settings.setStyleSheet(u"QWidget{\n"
 "font: 16pt \"Bahnschrift\";\n"
 "background-color: rgb(239, 255, 239);\n"
@@ -68,6 +69,7 @@ class Ui_Settings(object):
 
         self.label_5 = QLabel(Settings)
         self.label_5.setObjectName(u"label_5")
+        self.label_5.setWordWrap(True)
 
         self.gridLayout.addWidget(self.label_5, 3, 0, 1, 1)
 
@@ -93,7 +95,7 @@ class Ui_Settings(object):
         self.break_mode = QButtonGroup(Settings)
         self.break_mode.setObjectName(u"break_mode")
         self.break_mode.addButton(self.text)
-        self.text.setObjectName(u"text_2")
+        self.text.setObjectName(u"text")
         self.text.setStyleSheet(u"")
         self.text.setChecked(True)
 
@@ -145,6 +147,7 @@ class Ui_Settings(object):
 
         self.break_skip = QCheckBox(Settings)
         self.break_skip.setObjectName(u"break_skip")
+        self.break_skip.setCheckable(False)
 
         self.gridLayout.addWidget(self.break_skip, 3, 1, 1, 1)
 
@@ -220,7 +223,7 @@ class Ui_Settings(object):
         Settings.setWindowTitle(QCoreApplication.translate("Settings", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))
         self.label.setText(QCoreApplication.translate("Settings", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))
         self.label_4.setText(QCoreApplication.translate("Settings", u"\u0411\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u043a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u044b", None))
-        self.label_5.setText(QCoreApplication.translate("Settings", u"\u0412\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u0430\u0442\u044c \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u044b", None))
+        self.label_5.setText(QCoreApplication.translate("Settings", u"\u0412\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u0430\u0442\u044c \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u044b(\u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0435)", None))
         self.label_8.setText(QCoreApplication.translate("Settings", u"\u0412\u0440\u0435\u043c\u044f \u0442\u0430\u0439\u043c\u0435\u0440\u0430", None))
         self.label_3.setText(QCoreApplication.translate("Settings", u"\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0430 \u043f\u0440\u0438 \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u0430\u0445", None))
         self.label_7.setText(QCoreApplication.translate("Settings", u"\u0412\u0440\u0435\u043c\u044f \u043f\u0435\u0440\u0435\u0440\u044b\u0432\u0430", None))

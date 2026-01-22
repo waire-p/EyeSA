@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
-    <height>466</height>
+    <width>440</width>
+    <height>380</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>440</width>
+    <height>380</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Настройки</string>
@@ -62,7 +68,10 @@ accent-color:rgb(112, 148, 112);
        <item row="3" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Возможность пропускать перерывы</string>
+          <string>Возможность пропускать перерывы(в разработке)</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -169,6 +178,9 @@ accent-color:rgb(112, 148, 112);
         <widget class="QCheckBox" name="break_skip">
          <property name="text">
           <string/>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
          </property>
         </widget>
        </item>

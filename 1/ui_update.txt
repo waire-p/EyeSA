@@ -1,0 +1,5 @@
+pyside6-uic 1/main_window.ui -o data/ui/ui_main_window.py
+pyside6-uic 1/settings.ui -o data/ui/ui_settings.py
+pyside6-uic 1/about.ui -o data/ui/ui_about.py
+pyside6-uic 1/break_window.ui -o data/ui/ui_break_window.py
+pyside6-uic 1/break_notification.ui -o data/ui/ui_notification_dialog.py

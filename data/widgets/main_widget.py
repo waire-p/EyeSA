@@ -2,10 +2,10 @@ from PySide6.QtWidgets import QMainWindow
 from PySide6.QtCore import QTimer
 
 from data.ui.ui_main_window import Ui_MainWindow
-from data.widgets.settings_widget import Settings  # pyside6-uic ui/settings.ui -o ui/ui_settings.py
-from data.widgets.about_widget import About  # pyside6-uic ui/about.ui -o ui/ui_about.py
-from data.widgets.break_widget import BreakWindow  # pyside6-uic ui/break_window.ui -o ui/ui_break_window.py
-from data.widgets.notification_dialog import BreakNotification  # pyside6-uic ui/break_notification.ui -o ui/ui_notification_dialog.py
+from data.widgets.settings_widget import Settings
+from data.widgets.about_widget import About
+from data.widgets.break_widget import BreakWindow
+from data.widgets.notification_dialog import BreakNotification
 from data.modules.settings_reader import read_settings
 
 
@@ -67,13 +67,4 @@ class MainWindow(QMainWindow):
 
     def show_notification(self):
         self.dialog.update_text()
-        f = self.dialog.skip()
-        """if f:
-            print('Skip!')
-            self.timer.stop()
-            self.break_timer.stop()
-            self.notification_timer.start(read_settings()['timer'] * 3 // 4)
-            self.timer.start(read_settings()['timer'])"""
         self.dialog.exec()
-        f = False
-        print('Напомнили!')
