@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtWidgets import QApplication
-from data.widgets.main_widget import MainWindow  # pyside6-uic ui/main_window.ui -o ui/ui_main_window.py
+from data.widgets.main_widget import MainWindow
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -8,6 +8,3 @@ if __name__ == "__main__":
     window.show()
 
     sys.exit(app.exec())
-
-# посмотреть виджеты для картинок
-# переименовать параметр screen_lock на клаву, попробовать сделать сочетания клавиш и начать дизайн

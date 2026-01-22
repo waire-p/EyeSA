@@ -10,8 +10,8 @@ class BreakNotification(QDialog):
         super().__init__()
         self.ui = Ui_BreakNotification()
         self.ui.setupUi(self)
-        self.ui.skip_btn.clicked.connect(self.skip)
         self.ui.skip_btn.setChecked(False)
+        self.ui.skip_btn.hide()
 
     def update_text(self):
         time_remaining = read_settings()['timer'] * 1 // 4
@@ -37,7 +37,3 @@ class BreakNotification(QDialog):
             self.ui.skip_btn.show()
         else:
             self.ui.skip_btn.hide()
-
-    def skip(self):
-        self.close()
-        return True

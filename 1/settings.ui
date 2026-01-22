@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
-    <height>466</height>
+    <width>530</width>
+    <height>486</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -61,8 +61,14 @@ accent-color:rgb(112, 148, 112);
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_5">
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
          <property name="text">
-          <string>Возможность пропускать перерывы</string>
+          <string>Возможность пропускать перерывы(В разработке)</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -76,7 +82,7 @@ accent-color:rgb(112, 148, 112);
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Картинка при перерывах</string>
+          <string>Режим окна перерыва</string>
          </property>
         </widget>
        </item>
@@ -169,6 +175,9 @@ accent-color:rgb(112, 148, 112);
         <widget class="QCheckBox" name="break_skip">
          <property name="text">
           <string/>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
